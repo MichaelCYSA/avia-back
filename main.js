@@ -15,9 +15,6 @@ app.use(cors({
 }));
 
 app.use('/api' , router)
-app.get('/' ,(res) => {
-    res.status(200).json({message: 'server is working!'})
-})
 
 const port = process.env.PORT || 9000;
 app.listen(port)
