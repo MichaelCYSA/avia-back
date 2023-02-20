@@ -19,6 +19,9 @@ class Services {
             "maxFlightOffers": obj.maxResults || "10",
             "flightFilters": {
               "cabinRestrictions": obj.cabinRestrictions,
+              "connectionRestriction": {
+                maxNumberOfConnections: obj.maxNumberOfConnections
+              }
             }
           }
         })).then(function(response){
