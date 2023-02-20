@@ -16,7 +16,7 @@ class Services {
             "GDS"
           ],
           "searchCriteria": {
-            "maxFlightOffers": 50,
+            "maxFlightOffers": obj.maxResults || "10",
             "flightFilters": {
               "cabinRestrictions": obj.cabinRestrictions,
             }
@@ -49,7 +49,8 @@ class Services {
           infants: obj.infants,
           travelClass: obj.cabin,
           currencyCode: obj.currencyCode || 'USD',
-          returnDate: obj.returnDate
+          returnDate: obj.returnDate,
+          max: obj.maxResults || "10"
         }).then(function(response){
           res.status(200).json({data: response.data, error: null});
         }).catch(function(responseError){
